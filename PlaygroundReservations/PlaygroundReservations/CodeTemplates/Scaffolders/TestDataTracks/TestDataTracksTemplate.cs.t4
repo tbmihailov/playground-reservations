@@ -1,0 +1,128 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+<#@ assembly name="System.ComponentModel.DataAnnotations" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data.Entity" #>
+<#@ assembly name="System.Data.Linq" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.ComponentModel.DataAnnotations" #>
+<#@ import namespace="System.Data.Linq.Mapping" #>
+<#@ import namespace="System.Data.Objects.DataClasses" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Diagnostics" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+<#
+            var userProfiles = new List<string>()
+            {
+                "tbmihailov",
+				"todor", 
+            };
+
+            var groups = new List<string>() 
+            {
+                "Todor's things",                
+            };
+
+            var locations = new List<string>()
+            {
+                "My student room",  
+                "Home",
+                "Work - TU-Sofia",
+                "Work - office desk",
+            };
+
+            var contacts = new List<string>()
+            {
+                "Ina",
+                "Tsvetomila",
+                "Svetlin",
+                "Yoan",
+				"Yanina",
+            };
+
+            var items = new List<string>()
+            {
+                "Dell Laptop",
+                "Laptop cooler",
+                "Microwave", 
+                "Formax Esprit match",
+                "Fishing rod case ",
+                "Fishing reel", 
+                "Salmo fishing case", 
+                "Fishing bag", 
+                "Portable A-Data HDD", 
+                "Travel case", 
+                "Scale", 
+                "Flashlight - Varta", 
+                "Europe wall map", 
+                "My Safety-razor",
+                "HTC power suppy",
+                "My narghile", 
+                "Linksys wrt160nl",
+                "Kindle",
+                "Addidas backpack",
+            };
+
+            //tracks for 
+			var tracks =
+				new List<Track>()
+			        {
+						//Dell Laptop
+			            new Track()
+			            {
+			                Item = items.Where(i => i.Name =="Dell Laptop").FirstOrDefault(),
+			                Location = locations.Where(l => l.Name == "My student room").FirstOrDefault(),
+			                TrackDate = DateTime.Now.AddDays(-5),
+			                Notes = "My comp is at home",
+			            },
+			            new Track()
+			            {
+			                Item = items.Where(i => i.Name =="Dell Laptop").FirstOrDefault(),
+			                Location = locations.Where(l => l.Name == "Work - TU-Sofia").FirstOrDefault(),
+			                TrackDate = DateTime.Now.AddDays(-4),
+			            },
+			            new Track()
+			            {
+			                Item = items.Where(i => i.Name =="Dell Laptop").FirstOrDefault(),
+			                Location = locations.Where(l => l.Name == "Home").FirstOrDefault(),
+			                TrackDate = DateTime.Now.AddDays(-3),
+			            },
+			            new Track()
+			            {
+			                Item = items.Where(i => i.Name =="Dell Laptop").FirstOrDefault(),
+			                Location = locations.Where(l => l.Name == "My student room").FirstOrDefault(),
+			                TrackDate = DateTime.Now.AddDays(-1),
+			                Notes = "My comp is at home",
+			            },
+			        };
+			tracks.ForEach(t => context.Tracks.Add(t));
+#>
+namespace <#= Model.Namespace #>
+{ 
+    public class ExampleOutput
+    {
+		// Example model value from scaffolder script: <#= Model.ExampleValue #>
+	}
+}
+
+<#+
+
+public void WriteTrack(string itemName, string locaitonName, DateTime date,string locationsCollection)
+{
+	string trackToCreate =
+                        "new Track()\n" +
+                        "{\n" +
+                        "    Item = items.Where(i => i.Name ==\"" + itemName + "\").FirstOrDefault(),\n" +
+                        "    Location = locations.Where(l => l.Name == \"" + locaitonName + "\").FirstOrDefault(),\n" +
+                        "    TrackDate = DateTime.Now.AddDays(-5),\n" +
+                        "    Notes = \"My comp is at home\",\n" +
+                        "},";
+}
+
+#>
