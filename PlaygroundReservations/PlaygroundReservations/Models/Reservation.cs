@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlaygroundReservations.Models
 {
-    public class Reservation
+    public partial class Reservation
     {
         public int ReservationId { get; set; }
         public int PlaygroundId { get; set; }
@@ -64,7 +64,7 @@ namespace PlaygroundReservations.Models
             }
         }
 
-        public int ReservedById { get; set; }
+        public int? ReservedById { get; set; }
         public virtual CustomerProfile  ReservedBy { get; set; }
 
     }

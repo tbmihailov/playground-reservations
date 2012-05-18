@@ -54,7 +54,7 @@ namespace <#= modelTypeNamespace #>
 	{
 #>
 			[Display(Name = "<#= property.Name #>")]
-			[Required()]
+			//[Required()]
 			public <#= ((EnvDTE.CodeType)property.Type.CodeType).FullName #> <#= property.Name #>{ get; set; }
 
 <#

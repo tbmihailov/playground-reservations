@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlaygroundReservations.Models
 {
-    public class ReservationFee
+    public partial class ReservationFee
     {
         public int ReservationFeeId { get; set; }
 

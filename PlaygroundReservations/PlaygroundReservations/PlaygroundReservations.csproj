@@ -154,24 +154,42 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Exceptions\UnsupportedException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ConfigHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\ModelHelper.cs" />
+    <Compile Include="Helpers\UrlHelperExtensions.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CustomerProfile.cs" />
+    <Compile Include="Models\Metadata\CustomerProfileMetadata.cs" />
+    <Compile Include="Models\Metadata\OwnerProfileMetadata.cs" />
     <Compile Include="Models\PlaygroundImage.cs" />
+    <Compile Include="Models\Metadata\PlaygroundImageMetadata.cs" />
+    <Compile Include="Models\Metadata\PlaygroundMetadata.cs" />
     <Compile Include="Models\RequestStatus.cs" />
     <Compile Include="Models\ApprovalStatus.cs" />
     <Compile Include="Models\Playground.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\ReservationFee.cs" />
+    <Compile Include="Models\Metadata\ReservationMetadata.cs" />
     <Compile Include="Models\ReservationType.cs" />
     <Compile Include="Models\SportComplex.cs" />
+    <Compile Include="Models\Metadata\SportComplexMetadata.cs" />
     <Compile Include="Models\Surface.cs" />
     <Compile Include="Models\OwnerProfile.cs" />
+    <Compile Include="Models\Metadata\SurfaceMetadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AutoMapperConfigurator.cs" />
+    <Compile Include="Services\ImageHelperConfigurationTask.cs" />
+    <Compile Include="Services\NinjectConfigurator.cs" />
+    <Compile Include="Services\NinjectDependencyResolver.cs" />
+    <Compile Include="ViewModels\ReservationViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CodeTemplates\ScaffoldingScripts.txt" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />

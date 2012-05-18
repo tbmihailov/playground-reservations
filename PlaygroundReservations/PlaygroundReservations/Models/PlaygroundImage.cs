@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlaygroundReservations.Models
 {
-    public class PlaygroundImage
+    public partial class PlaygroundImage
     {
         public int PlaygroundImageId { get; set; }
         public string Path { get; set; }

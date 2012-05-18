@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PlaygroundReservations.Models
 {
-    public class Playground
+    public partial class Playground
     {
         public int PlaygroundId { get; set; }
         public string Name { get; set; }
@@ -18,6 +18,9 @@ namespace PlaygroundReservations.Models
 
         public int SurfaceId { get; set; }
         public virtual Surface Surface { get; set; }
+
+        public int SportComplexId { get; set; }
+        public virtual SportComplex SportComplex { get; set; }
 
         public virtual IEnumerable<PlaygroundImage> PlaygroundImages { get; set; }
 

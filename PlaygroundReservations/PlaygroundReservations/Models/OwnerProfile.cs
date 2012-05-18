@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PlaygroundReservations.Models
 {
-    public class OwnerProfile
+    public partial class OwnerProfile
     {
         public int OwnerProfileId { get; set; }
         public string Email { get; set; }
@@ -16,5 +16,7 @@ namespace PlaygroundReservations.Models
         public string Notes { get; set; }
         public string Phone { get; set; }
         public string WebSite { get; set; }
+
+        public virtual IEnumerable<SportComplex> SportComplexes { get; set; }
     }
 }

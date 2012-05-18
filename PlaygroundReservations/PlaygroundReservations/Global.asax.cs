@@ -9,6 +9,11 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Bootstrap.AutoMapper;
+using Bootstrap.Ninject;
+using Bootstrap;
+using Bootstrap.Extensions;
+using Bootstrap.Extensions.StartupTasks;
 
 namespace PlaygroundReservations
 {
@@ -41,8 +46,9 @@ namespace PlaygroundReservations
 
         protected void Application_Start()
         {
+            InitBootstrapper();
             AreaRegistration.RegisterAllAreas();
-
+   
             // Use LocalDB for Entity Framework by default
             Database.DefaultConnectionFactory = new SqlConnectionFactory("Data Source=(localdb)\v11.0; Integrated Security=True; MultipleActiveResultSets=True");
 
@@ -50,6 +56,16 @@ namespace PlaygroundReservations
             RegisterRoutes(RouteTable.Routes);
 
             BundleTable.Bundles.RegisterTemplateBundles();
+        }
+
+        private void InitBootstrapper()
+        {
+            Bootstrapper
+                //.With.Ninject()
+                .With.AutoMapper()
+                //.And.AutoMapper()
+                .And.StartupTasks()
+            .Start();
         }
     }
 }

@@ -1,0 +1,9 @@
+﻿//metadata
+ Scaffold EntityMetadata -ModelType CustomerProfile
+ Scaffold EntityMetadata -ModelType OwnerProfile
+ Scaffold EntityMetadata -ModelType Playground
+ Scaffold EntityMetadata -ModelType PlaygroundImage
+ Scaffold EntityMetadata -ModelType Reservation
+ Scaffold EntityMetadata -ModelType SportComplex
+ Scaffold EntityMetadata -ModelType Surface
+ 

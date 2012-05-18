@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PlaygroundReservations.Models
 {
-    public class Surface
+    public partial class Surface
     {
         public int SurfaceId { get; set; }
         public string Name { get; set; }
