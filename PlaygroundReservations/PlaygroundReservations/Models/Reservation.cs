@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -26,6 +27,7 @@ namespace PlaygroundReservations.Models
         public bool IsApprovedByOwner { get; set; }
 
         public int ReservationTypeId { get; set; }
+        [NotMapped]
         public ReservationType ReservationType
         {
             get
@@ -38,7 +40,22 @@ namespace PlaygroundReservations.Models
             }
         }
 
+        public int PaymentTypeId { get; set; }
+        [NotMapped]
+        public PaymentType PaymentType
+        {
+            get
+            {
+                return (PaymentType)PaymentTypeId;
+            }
+            set
+            {
+                PaymentTypeId = (int)value;
+            }
+        }
+
         public int RequestStatusId { get; set; }
+        [NotMapped]
         public RequestStatus RequestStatus
         {
             get
@@ -52,6 +69,7 @@ namespace PlaygroundReservations.Models
         }
 
         public int ApprovalStatusId { get; set; }
+        [NotMapped]
         public ApprovalStatus ApprovalStatus
         {
             get
