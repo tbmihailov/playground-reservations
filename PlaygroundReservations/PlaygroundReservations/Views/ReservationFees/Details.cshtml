@@ -1,0 +1,32 @@
+@model PlaygroundReservations.Models.ReservationFee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ReservationFee</legend>
+
+    <div class="display-label">Playground</div>
+    <div class="display-field">@(Model.Playground == null ? "None" : Model.Playground.Name)</div>
+
+    <div class="display-label">DayOfWeek</div>
+    <div class="display-field">@Model.DayOfWeek</div>
+
+    <div class="display-label">TimeFrom</div>
+    <div class="display-field">@Model.TimeFrom</div>
+
+    <div class="display-label">TimeTo</div>
+    <div class="display-field">@Model.TimeTo</div>
+
+    <div class="display-label">Price</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Price)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("редактирай", "edit", new { id = Model.ReservationFeeId }, new { @class = "edit-button" }) |
+    @Html.ActionLink("към списък", "Index", null, new { @class = "back-button" })
+</p>
+
+

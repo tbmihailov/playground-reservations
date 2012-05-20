@@ -82,7 +82,7 @@ namespace PlaygroundReservations.Models
             }
         }
 
-        public int? ReservedById { get; set; }
+        public int ReservedById { get; set; }
         public virtual CustomerProfile  ReservedBy { get; set; }
 
     }

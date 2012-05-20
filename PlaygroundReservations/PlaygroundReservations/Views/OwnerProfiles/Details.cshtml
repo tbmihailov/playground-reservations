@@ -1,0 +1,44 @@
+@model PlaygroundReservations.Models.OwnerProfile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>OwnerProfile</legend>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">Address</div>
+    <div class="display-field">@Model.Address</div>
+
+    <div class="display-label">Number</div>
+    <div class="display-field">@Model.Number</div>
+
+    <div class="display-label">LiablePersonName</div>
+    <div class="display-field">@Model.LiablePersonName</div>
+
+    <div class="display-label">Notes</div>
+    <div class="display-field">@Model.Notes</div>
+
+    <div class="display-label">Phone</div>
+    <div class="display-field">@Model.Phone</div>
+
+    <div class="display-label">WebSite</div>
+    <div class="display-field">@Model.WebSite</div>
+
+    <div class="display-label">SportComplexes</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.SportComplexes).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("редактирай", "edit", new { id = Model.OwnerProfileId }, new { @class = "edit-button" }) |
+    @Html.ActionLink("към списък", "Index", null, new { @class = "back-button" })
+</p>
+
+

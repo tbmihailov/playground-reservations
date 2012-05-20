@@ -1,0 +1,83 @@
+@model IEnumerable<PlaygroundReservations.Models.OwnerProfile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ново", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Email
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Number
+        </th>
+        <th>
+            LiablePersonName
+        </th>
+        <th>
+            Notes
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            WebSite
+        </th>
+        <th>
+            SportComplexes
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("редактирай", "Edit", new { id=item.OwnerProfileId }) |
+            @Html.ActionLink("детайли", "Details", new { id=item.OwnerProfileId }) |
+            @Html.ActionLink("изтрий", "Delete", new { id=item.OwnerProfileId })
+        </td>
+        <td>
+			@item.Email
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.Address
+        </td>
+        <td>
+			@item.Number
+        </td>
+        <td>
+			@item.LiablePersonName
+        </td>
+        <td>
+			@item.Notes
+        </td>
+        <td>
+			@item.Phone
+        </td>
+        <td>
+			@item.WebSite
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.SportComplexes).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

@@ -7,3 +7,22 @@
  Scaffold EntityMetadata -ModelType SportComplex
  Scaffold EntityMetadata -ModelType Surface
  
+ //controllers
+ Scaffold Controller CustomerProfile -Repository -Force
+ Scaffold Controller OwnerProfile -Repository -Force
+ Scaffold Controller SportComplex -Repository -Force
+ Scaffold Controller Surface -Repository -Force
+ Scaffold Controller Playground -Repository -Force
+ Scaffold Controller PlaygroundImage -Repository -Force
+ Scaffold Controller Reservation -Repository -Force
+ Scaffold Controller ReservationFee -Repository -Force
+
+  //repositories
+ Scaffold Repository CustomerProfile -Force
+ Scaffold Repository OwnerProfile  -Force
+ Scaffold Repository SportComplex -Force
+ Scaffold Repository Surface -Force
+ Scaffold Repository Playground -Force
+ Scaffold Repository PlaygroundImage -Force
+ Scaffold Repository Reservation -Force
+ Scaffold Repository ReservationFee -Force

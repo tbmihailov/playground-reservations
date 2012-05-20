@@ -24,15 +24,15 @@ namespace PlaygroundReservations.Models
 			{
 			}
 	
-			[Display(Name = "SurfaceId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 SurfaceId{ get; set; }
 
-			[Display(Name = "Name")]
+			[Display(Name = "Име")]
 			//[Required()]
 			public System.String Name{ get; set; }
 
-			[Display(Name = "Description")]
+			[Display(Name = "Описание")]
 			//[Required()]
 			public System.String Description{ get; set; }
 

@@ -1,0 +1,131 @@
+@model IEnumerable<PlaygroundReservations.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ново", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Playground
+        </th>
+        <th>
+            ResrvationDate
+        </th>
+        <th>
+            Hour
+        </th>
+        <th>
+            CustomerEmail
+        </th>
+        <th>
+            CustomerName
+        </th>
+        <th>
+            CustomerPhone
+        </th>
+        <th>
+            Created
+        </th>
+        <th>
+            IsApprovedByOwner
+        </th>
+        <th>
+            ReservationTypeId
+        </th>
+        <th>
+            ReservationType
+        </th>
+        <th>
+            PaymentTypeId
+        </th>
+        <th>
+            PaymentType
+        </th>
+        <th>
+            RequestStatusId
+        </th>
+        <th>
+            RequestStatus
+        </th>
+        <th>
+            ApprovalStatusId
+        </th>
+        <th>
+            ApprovalStatus
+        </th>
+        <th>
+            ReservedBy
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("редактирай", "Edit", new { id=item.ReservationId }) |
+            @Html.ActionLink("детайли", "Details", new { id=item.ReservationId }) |
+            @Html.ActionLink("изтрий", "Delete", new { id=item.ReservationId })
+        </td>
+        <td>
+			@(item.Playground == null ? "None" : item.Playground.Name)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.ResrvationDate)
+        </td>
+        <td>
+			@item.Hour
+        </td>
+        <td>
+			@item.CustomerEmail
+        </td>
+        <td>
+			@item.CustomerName
+        </td>
+        <td>
+			@item.CustomerPhone
+        </td>
+        <td>
+			@String.Format("{0:g}", item.Created)
+        </td>
+        <td>
+			@item.IsApprovedByOwner
+        </td>
+        <td>
+			@item.ReservationTypeId
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.ReservationType).ToString()
+        </td>
+        <td>
+			@item.PaymentTypeId
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PaymentType).ToString()
+        </td>
+        <td>
+			@item.RequestStatusId
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.RequestStatus).ToString()
+        </td>
+        <td>
+			@item.ApprovalStatusId
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.ApprovalStatus).ToString()
+        </td>
+        <td>
+			@(item.ReservedBy == null ? "None" : item.ReservedBy.Name)
+        </td>
+    </tr>
+}
+
+</table>
+
+

@@ -1,32 +1,38 @@
 @model PlaygroundReservations.Models.RegisterModel
-
+@using PlaygroundReservations.Helpers
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Регистрация";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Use the form below to create a new account.</h2>
+    @*<h2>Use the form below to create a new account.</h2>*@
 </hgroup>
 
 <p class="message-info">
-    Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length.
+    Паролата трябва да е поне @Membership.MinRequiredPasswordLength знака.
 </p>
 
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 @using (Html.BeginForm((string)ViewBag.FormAction, "Account")) {
-    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+    @Html.ValidationSummary(true, "Регистрацията беше неуспешна. МОля поправете грешките и опитайте отново!")
 
     <fieldset>
-        <legend>Registration Form</legend>
+        <legend>Форма за регистрация</legend>
         <ol>
 @*            <li>
                 @Html.LabelFor(m => m.UserName)
                 @Html.TextBoxFor(m => m.UserName)
                 @Html.ValidationMessageFor(m => m.UserName)
             </li>*@
+             <li>
+                @Html.LabelFor(m => m.UserTypeId)
+                @Html.EnumDropDownListFor(m => m.UserType)
+                @Html.ValidationMessageFor(m => m.UserTypeId)
+            </li>
+
             <li>
                 @Html.LabelFor(m => m.Email)
                 @Html.TextBoxFor(m => m.Email)
@@ -43,6 +49,6 @@
                 @Html.ValidationMessageFor(m => m.ConfirmPassword)
             </li>
         </ol>
-        <input type="submit" value="Register" />
+        <input type="submit" value="Регистрация" />
     </fieldset>
 }

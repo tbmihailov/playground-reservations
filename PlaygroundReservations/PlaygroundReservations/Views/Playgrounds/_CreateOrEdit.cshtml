@@ -1,0 +1,67 @@
+﻿@model PlaygroundReservations.Models.Playground
+@using PlaygroundReservations.Helpers
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+@*<div class="editor-label">
+    @Html.LabelFor(model => model.SportTypeId)
+</div>
+<div class="editor-field">
+    @Html.EnumDropDownListFor(model => model.SportType)
+    @Html.ValidationMessageFor(model => model.SportTypeId)
+</div>*@
+@Html.HiddenFor(model=>model.SportTypeId)
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Name)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Description)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Description)
+    @Html.ValidationMessageFor(model => model.Description)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Width)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Width)
+    @Html.ValidationMessageFor(model => model.Width)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Length)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Length)
+    @Html.ValidationMessageFor(model => model.Length)
+</div>
+
+<div class="editor-label">
+    SportComplex
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.SportComplexId, ((IEnumerable<PlaygroundReservations.Models.SportComplex>)ViewBag.PossibleSportComplexes).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.SportComplexId.ToString(),
+        Selected = (Model != null) && (option.SportComplexId == Model.SportComplexId)
+    }), "Избери...")
+    @Html.ValidationMessageFor(model => model.SportComplexId)
+</div>
+<div class="editor-label">
+    Surface
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.SurfaceId, ((IEnumerable<PlaygroundReservations.Models.Surface>)ViewBag.PossibleSurfaces).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.SurfaceId.ToString(),
+        Selected = (Model != null) && (option.SurfaceId == Model.SurfaceId)
+    }), "Избери...")
+    @Html.ValidationMessageFor(model => model.SurfaceId)
+</div>

@@ -1,12 +1,12 @@
 @model PlaygroundReservations.Models.LoginModel
 
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Вход";
 }
 
 <hgroup class="title">
     <h1>@ViewBag.Title.</h1>
-    <h2>Enter your user name and password below.</h2>
+    <h2>Въведете вашето потребителско име и парола.</h2>
 </hgroup>
 
 <script src="~/Scripts/jquery.validate.min.js"></script>
@@ -33,7 +33,7 @@
                 @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
             </li>
         </ol>
-        <input type="submit" value="Log in" />
+        <input type="submit" value="Вход" />
     </fieldset>
     <p>
         @Html.ActionLink("Регистрирай се", "Register"), ако все още нямаш акаунт.

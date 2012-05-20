@@ -1,0 +1,26 @@
+@model PlaygroundReservations.Models.PlaygroundImage
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>PlaygroundImage</legend>
+
+    <div class="display-label">Path</div>
+    <div class="display-field">@Model.Path</div>
+
+    <div class="display-label">Playground</div>
+    <div class="display-field">@(Model.Playground == null ? "None" : Model.Playground.Name)</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

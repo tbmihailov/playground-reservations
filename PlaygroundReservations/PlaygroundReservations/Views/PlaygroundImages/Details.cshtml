@@ -1,0 +1,23 @@
+@model PlaygroundReservations.Models.PlaygroundImage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PlaygroundImage</legend>
+
+    <div class="display-label">Path</div>
+    <div class="display-field">@Model.Path</div>
+
+    <div class="display-label">Playground</div>
+    <div class="display-field">@(Model.Playground == null ? "None" : Model.Playground.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("редактирай", "edit", new { id = Model.PlaygroundImageId }, new { @class = "edit-button" }) |
+    @Html.ActionLink("към списък", "Index", null, new { @class = "back-button" })
+</p>
+
+

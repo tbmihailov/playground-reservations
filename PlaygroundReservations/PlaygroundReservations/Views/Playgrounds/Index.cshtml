@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PlaygroundReservations.Models.Playground>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ново", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            SportComplex
+        </th>
+        <th>
+            SportTypeId
+        </th>
+        <th>
+            SportType
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Width
+        </th>
+        <th>
+            Length
+        </th>
+        <th>
+            Surface
+        </th>
+        <th>
+            PlaygroundImages
+        </th>
+        <th>
+            Reservations
+        </th>
+        <th>
+            ReservationFees
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("редактирай", "Edit", new { id=item.PlaygroundId }) |
+            @Html.ActionLink("детайли", "Details", new { id=item.PlaygroundId }) |
+            @Html.ActionLink("изтрий", "Delete", new { id=item.PlaygroundId })
+        </td>
+        <td>
+			@(item.SportComplex == null ? "None" : item.SportComplex.Name)
+        </td>
+        <td>
+			@item.SportTypeId
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.SportType).ToString()
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.Description
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Width)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Length)
+        </td>
+        <td>
+			@(item.Surface == null ? "None" : item.Surface.Name)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.PlaygroundImages).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Reservations).ToString()
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.ReservationFees).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

@@ -6,7 +6,7 @@
         // We verify if we created it beforehand
         var errorSummary = $form.find('.validation-summary-errors, .validation-summary-valid');
         if (!errorSummary.length) {
-            errorSummary = $('<div class="validation-summary-errors"><span>Please correct the errors and try again.</span><ul></ul></div>')
+            errorSummary = $('<div class="validation-summary-errors"><span>Моля, оправете грешките и опитайте отново.</span><ul></ul></div>')
                 .prependTo($form);
         }
 

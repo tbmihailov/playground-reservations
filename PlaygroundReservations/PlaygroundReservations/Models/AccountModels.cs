@@ -47,6 +47,20 @@ namespace PlaygroundReservations.Models
         //[Display(Name = "User name")]
         //public string UserName { get; set; }
 
+        [Display(Name="Тип потребител")]
+        [Required(ErrorMessage = "Моля, изберете тип на акаунта")]
+        public int UserTypeId { get; set; }
+        [Display(Name = "Тип потребител")]
+        public UserType UserType
+        {
+            get { return (UserType)UserTypeId; }
+            set
+            {
+                UserTypeId = (int)value;
+            }
+        }
+
+
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Ел. поща")]

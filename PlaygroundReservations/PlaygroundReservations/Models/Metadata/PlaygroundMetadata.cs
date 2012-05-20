@@ -23,52 +23,52 @@ namespace PlaygroundReservations.Models
 			private PlaygroundMetadata()
 			{
 			}
-	
-			[Display(Name = "PlaygroundId")]
+
+            [Display(Name = "Номер")]
 			//[Required()]
 			public System.Int32 PlaygroundId{ get; set; }
 
-			[Display(Name = "Name")]
+            [Display(Name = "Име")]
 			//[Required()]
 			public System.String Name{ get; set; }
 
-			[Display(Name = "Description")]
+			[Display(Name = "Описание")]
 			//[Required()]
 			public System.String Description{ get; set; }
 
-			[Display(Name = "Width")]
+			[Display(Name = "Ширина")]
 			//[Required()]
 			public System.Double Width{ get; set; }
 
-			[Display(Name = "Length")]
+			[Display(Name = "Дължина")]
 			//[Required()]
 			public System.Double Length{ get; set; }
 
-			[Display(Name = "SurfaceId")]
+			[Display(Name = "Номер")]
 			//[Required()]
 			public System.Int32 SurfaceId{ get; set; }
 
-			[Display(Name = "Surface")]
+			[Display(Name = "Настилка")]
 			//[Required()]
 			public PlaygroundReservations.Models.Surface Surface{ get; set; }
 
-			[Display(Name = "SportComplexId")]
+            [Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 SportComplexId{ get; set; }
 
-			[Display(Name = "SportComplex")]
+			[Display(Name = "Спортен комплкес")]
 			//[Required()]
 			public PlaygroundReservations.Models.SportComplex SportComplex{ get; set; }
 
-			[Display(Name = "PlaygroundImages")]
+			[Display(Name = "Снимки")]
 			//[Required()]
 			public System.Collections.Generic.IEnumerable<PlaygroundReservations.Models.PlaygroundImage> PlaygroundImages{ get; set; }
 
-			[Display(Name = "Reservations")]
+			[Display(Name = "Резервации")]
 			//[Required()]
 			public System.Collections.Generic.IEnumerable<PlaygroundReservations.Models.Reservation> Reservations{ get; set; }
 
-			[Display(Name = "ReservationFees")]
+			[Display(Name = "Такса")]
 			//[Required()]
 			public System.Collections.Generic.IEnumerable<PlaygroundReservations.Models.ReservationFee> ReservationFees{ get; set; }
 

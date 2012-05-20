@@ -24,55 +24,55 @@ namespace PlaygroundReservations.Models
 			{
 			}
 	
-			[Display(Name = "SportComplexId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 SportComplexId{ get; set; }
 
-			[Display(Name = "Name")]
+			[Display(Name = "Име")]
 			//[Required()]
 			public System.String Name{ get; set; }
 
-			[Display(Name = "Address")]
+			[Display(Name = "Адрес")]
 			//[Required()]
 			public System.String Address{ get; set; }
 
-			[Display(Name = "City")]
+			[Display(Name = "Град")]
 			//[Required()]
 			public System.String City{ get; set; }
 
-			[Display(Name = "Section")]
+			[Display(Name = "Квартал")]
 			//[Required()]
 			public System.String Section{ get; set; }
 
-			[Display(Name = "Description")]
+			[Display(Name = "Описание")]
 			//[Required()]
 			public System.String Description{ get; set; }
 
-			[Display(Name = "Phone")]
+			[Display(Name = "Телефон")]
 			//[Required()]
 			public System.String Phone{ get; set; }
 
-			[Display(Name = "Email")]
+			[Display(Name = "Имейл")]
 			//[Required()]
 			public System.String Email{ get; set; }
 
-			[Display(Name = "Latitude")]
+			[Display(Name = "Гео.Ширина")]
 			//[Required()]
 			public System.Decimal Latitude{ get; set; }
 
-			[Display(Name = "Longitude")]
+			[Display(Name = "Гео.Дължина")]
 			//[Required()]
 			public System.Decimal Longitude{ get; set; }
 
-			[Display(Name = "OwnerId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 OwnerId{ get; set; }
 
-			[Display(Name = "Owner")]
+			[Display(Name = "Собственик")]
 			//[Required()]
 			public PlaygroundReservations.Models.OwnerProfile Owner{ get; set; }
 
-			[Display(Name = "Playgrounds")]
+			[Display(Name = "Игрища")]
 			//[Required()]
 			public System.Collections.Generic.IEnumerable<PlaygroundReservations.Models.Playground> Playgrounds{ get; set; }
 

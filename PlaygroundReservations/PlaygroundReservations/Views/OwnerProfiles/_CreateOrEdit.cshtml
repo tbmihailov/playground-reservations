@@ -1,0 +1,68 @@
+@model PlaygroundReservations.Models.OwnerProfile
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Email)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Email)
+    @Html.ValidationMessageFor(model => model.Email)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Name)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Address)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Address)
+    @Html.ValidationMessageFor(model => model.Address)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Number)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Number)
+    @Html.ValidationMessageFor(model => model.Number)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.LiablePersonName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.LiablePersonName)
+    @Html.ValidationMessageFor(model => model.LiablePersonName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Notes)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Notes)
+    @Html.ValidationMessageFor(model => model.Notes)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Phone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Phone)
+    @Html.ValidationMessageFor(model => model.Phone)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.WebSite)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.WebSite)
+    @Html.ValidationMessageFor(model => model.WebSite)
+</div>
+

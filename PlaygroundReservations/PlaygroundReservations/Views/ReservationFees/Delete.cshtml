@@ -1,0 +1,35 @@
+@model PlaygroundReservations.Models.ReservationFee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ReservationFee</legend>
+
+    <div class="display-label">Playground</div>
+    <div class="display-field">@(Model.Playground == null ? "None" : Model.Playground.Name)</div>
+
+    <div class="display-label">DayOfWeek</div>
+    <div class="display-field">@Model.DayOfWeek</div>
+
+    <div class="display-label">TimeFrom</div>
+    <div class="display-field">@Model.TimeFrom</div>
+
+    <div class="display-label">TimeTo</div>
+    <div class="display-field">@Model.TimeTo</div>
+
+    <div class="display-label">Price</div>
+    <div class="display-field">@String.Format("{0:F}", Model.Price)</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

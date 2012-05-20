@@ -1,0 +1,114 @@
+@model PlaygroundReservations.Models.Reservation
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ResrvationDate)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ResrvationDate)
+    @Html.ValidationMessageFor(model => model.ResrvationDate)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Hour)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Hour)
+    @Html.ValidationMessageFor(model => model.Hour)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CustomerEmail)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CustomerEmail)
+    @Html.ValidationMessageFor(model => model.CustomerEmail)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CustomerName)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CustomerName)
+    @Html.ValidationMessageFor(model => model.CustomerName)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.CustomerPhone)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.CustomerPhone)
+    @Html.ValidationMessageFor(model => model.CustomerPhone)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Created)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Created)
+    @Html.ValidationMessageFor(model => model.Created)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.IsApprovedByOwner)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.IsApprovedByOwner)
+    @Html.ValidationMessageFor(model => model.IsApprovedByOwner)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ReservationTypeId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ReservationTypeId)
+    @Html.ValidationMessageFor(model => model.ReservationTypeId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.PaymentTypeId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.PaymentTypeId)
+    @Html.ValidationMessageFor(model => model.PaymentTypeId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.RequestStatusId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.RequestStatusId)
+    @Html.ValidationMessageFor(model => model.RequestStatusId)
+</div>
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.ApprovalStatusId)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.ApprovalStatusId)
+    @Html.ValidationMessageFor(model => model.ApprovalStatusId)
+</div>
+
+<div class="editor-label">
+    Playground
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.PlaygroundId, ((IEnumerable<PlaygroundReservations.Models.Playground>)ViewBag.PossiblePlaygrounds).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.PlaygroundId.ToString(),
+        Selected = (Model != null) && (option.PlaygroundId == Model.PlaygroundId)
+    }), "Избери...")
+    @Html.ValidationMessageFor(model => model.PlaygroundId)
+</div>
+<div class="editor-label">
+    ReservedBy
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.ReservedById, ((IEnumerable<PlaygroundReservations.Models.CustomerProfile>)ViewBag.PossibleReservedBies).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.CustomerProfileId.ToString(),
+        Selected = (Model != null) && (option.CustomerProfileId == Model.ReservedById)
+    }), "Избери...")
+    @Html.ValidationMessageFor(model => model.ReservedById)
+</div>

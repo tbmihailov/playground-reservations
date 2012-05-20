@@ -24,27 +24,27 @@ namespace PlaygroundReservations.Models
 			{
 			}
 	
-			[Display(Name = "CustomerProfileId")]
+			[Display(Name = "  Номер на Потребителски Профил")]
 			//[Required()]
 			public System.Int32 CustomerProfileId{ get; set; }
 
-			[Display(Name = "Email")]
+			[Display(Name = "Имейл")]
 			//[Required()]
 			public System.String Email{ get; set; }
 
-			[Display(Name = "Name")]
+			[Display(Name = "Име")]
 			//[Required()]
 			public System.String Name{ get; set; }
 
-			[Display(Name = "Notes")]
+			[Display(Name = "Бележки")]
 			//[Required()]
 			public System.String Notes{ get; set; }
 
-			[Display(Name = "Phone")]
+			[Display(Name = "Телефонен номер")]
 			//[Required()]
 			public System.String Phone{ get; set; }
 
-			[Display(Name = "Reservations")]
+			[Display(Name = "Резервации")]
 			//[Required()]
 			public System.Collections.Generic.IEnumerable<PlaygroundReservations.Models.Reservation> Reservations{ get; set; }
 

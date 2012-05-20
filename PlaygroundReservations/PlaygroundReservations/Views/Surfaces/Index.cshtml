@@ -1,0 +1,41 @@
+@model IEnumerable<PlaygroundReservations.Models.Surface>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ново", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("редактирай", "Edit", new { id=item.SurfaceId }) |
+            @Html.ActionLink("детайли", "Details", new { id=item.SurfaceId }) |
+            @Html.ActionLink("изтрий", "Delete", new { id=item.SurfaceId })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.Description
+        </td>
+    </tr>
+}
+
+</table>
+
+

@@ -24,75 +24,75 @@ namespace PlaygroundReservations.Models
 			{
 			}
 	
-			[Display(Name = "ReservationId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 ReservationId{ get; set; }
 
-			[Display(Name = "PlaygroundId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 PlaygroundId{ get; set; }
 
-			[Display(Name = "Playground")]
+			[Display(Name = "Игрище")]
 			//[Required()]
 			public PlaygroundReservations.Models.Playground Playground{ get; set; }
 
-			[Display(Name = "ResrvationDate")]
+			[Display(Name = "Дата")]
 			//[Required()]
 			public System.DateTime ResrvationDate{ get; set; }
 
-			[Display(Name = "Hour")]
+			[Display(Name = "Час")]
 			//[Required()]
 			public System.Int32 Hour{ get; set; }
 
-			[Display(Name = "CustomerEmail")]
+			[Display(Name = "Имейл")]
 			//[Required()]
 			public System.String CustomerEmail{ get; set; }
 
-			[Display(Name = "CustomerName")]
+			[Display(Name = "Име")]
 			//[Required()]
 			public System.String CustomerName{ get; set; }
 
-			[Display(Name = "CustomerPhone")]
+			[Display(Name = "Номер")]
 			//[Required()]
 			public System.String CustomerPhone{ get; set; }
 
-			[Display(Name = "Created")]
+			[Display(Name = "Създаден")]
 			//[Required()]
 			public System.DateTime Created{ get; set; }
 
-			[Display(Name = "IsApprovedByOwner")]
+			[Display(Name = "Одобрен")]
 			//[Required()]
 			public System.Boolean IsApprovedByOwner{ get; set; }
 
-			[Display(Name = "ReservationTypeId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 ReservationTypeId{ get; set; }
 
-			[Display(Name = "ReservationType")]
+			[Display(Name = "Тип")]
 			//[Required()]
 			public PlaygroundReservations.Models.ReservationType ReservationType{ get; set; }
 
-			[Display(Name = "RequestStatusId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 RequestStatusId{ get; set; }
 
-			[Display(Name = "RequestStatus")]
+			[Display(Name = "Статус")]
 			//[Required()]
 			public PlaygroundReservations.Models.RequestStatus RequestStatus{ get; set; }
 
-			[Display(Name = "ApprovalStatusId")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32 ApprovalStatusId{ get; set; }
 
-			[Display(Name = "ApprovalStatus")]
+			[Display(Name = "Одобрен Статус")]
 			//[Required()]
 			public PlaygroundReservations.Models.ApprovalStatus ApprovalStatus{ get; set; }
 
-			[Display(Name = "ReservedById")]
+			[Display(Name = "Id")]
 			//[Required()]
 			public System.Int32? ReservedById{ get; set; }
 
-			[Display(Name = "ReservedBy")]
+			[Display(Name = "Резервиран от")]
 			//[Required()]
 			public PlaygroundReservations.Models.CustomerProfile ReservedBy{ get; set; }
 

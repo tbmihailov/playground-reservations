@@ -1,0 +1,23 @@
+@model PlaygroundReservations.Models.PlaygroundImage
+
+@* This partial view defines form fields that will appear when creating and editing entities *@
+
+<div class="editor-label">
+    @Html.LabelFor(model => model.Path)
+</div>
+<div class="editor-field">
+    @Html.EditorFor(model => model.Path)
+    @Html.ValidationMessageFor(model => model.Path)
+</div>
+
+<div class="editor-label">
+    Playground
+</div>
+<div class="editor-field">
+    @Html.DropDownListFor(model => model.PlaygroundId, ((IEnumerable<PlaygroundReservations.Models.Playground>)ViewBag.PossiblePlaygrounds).Select(option => new SelectListItem {
+        Text = (option == null ? "None" : option.Name), 
+        Value = option.PlaygroundId.ToString(),
+        Selected = (Model != null) && (option.PlaygroundId == Model.PlaygroundId)
+    }), "Избери...")
+    @Html.ValidationMessageFor(model => model.PlaygroundId)
+</div>

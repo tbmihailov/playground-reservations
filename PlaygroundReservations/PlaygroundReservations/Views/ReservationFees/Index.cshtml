@@ -1,0 +1,59 @@
+@model IEnumerable<PlaygroundReservations.Models.ReservationFee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ново", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Playground
+        </th>
+        <th>
+            DayOfWeek
+        </th>
+        <th>
+            TimeFrom
+        </th>
+        <th>
+            TimeTo
+        </th>
+        <th>
+            Price
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("редактирай", "Edit", new { id=item.ReservationFeeId }) |
+            @Html.ActionLink("детайли", "Details", new { id=item.ReservationFeeId }) |
+            @Html.ActionLink("изтрий", "Delete", new { id=item.ReservationFeeId })
+        </td>
+        <td>
+			@(item.Playground == null ? "None" : item.Playground.Name)
+        </td>
+        <td>
+			@item.DayOfWeek
+        </td>
+        <td>
+			@item.TimeFrom
+        </td>
+        <td>
+			@item.TimeTo
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Price)
+        </td>
+    </tr>
+}
+
+</table>
+
+

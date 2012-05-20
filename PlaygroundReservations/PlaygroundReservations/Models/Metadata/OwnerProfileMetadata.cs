@@ -24,43 +24,43 @@ namespace PlaygroundReservations.Models
 			{
 			}
 	
-			[Display(Name = "OwnerProfileId")]
+			[Display(Name = "Номер Собственик на игрище")]
 			//[Required()]
 			public System.Int32 OwnerProfileId{ get; set; }
 
-			[Display(Name = "Email")]
+            [Display(Name = "Имейл")]
 			//[Required()]
 			public System.String Email{ get; set; }
 
-			[Display(Name = "Name")]
+            [Display(Name = "Име")]
 			//[Required()]
 			public System.String Name{ get; set; }
 
-			[Display(Name = "Address")]
+			[Display(Name = "Адрес")]
 			//[Required()]
 			public System.String Address{ get; set; }
 
-			[Display(Name = "Number")]
+			[Display(Name = "Номер")]
 			//[Required()]
 			public System.String Number{ get; set; }
 
-			[Display(Name = "LiablePersonName")]
+			[Display(Name = "Име на отговорника")]
 			//[Required()]
 			public System.String LiablePersonName{ get; set; }
 
-			[Display(Name = "Notes")]
+            [Display(Name = "Бележки")]
 			//[Required()]
 			public System.String Notes{ get; set; }
 
-			[Display(Name = "Phone")]
+            [Display(Name = "Телефонен номер")]
 			//[Required()]
 			public System.String Phone{ get; set; }
 
-			[Display(Name = "WebSite")]
+			[Display(Name = "Интернет Страница")]
 			//[Required()]
 			public System.String WebSite{ get; set; }
 
-			[Display(Name = "SportComplexes")]
+			[Display(Name = "Спортни Комплекси")]
 			//[Required()]
 			public System.Collections.Generic.IEnumerable<PlaygroundReservations.Models.SportComplex> SportComplexes{ get; set; }
 

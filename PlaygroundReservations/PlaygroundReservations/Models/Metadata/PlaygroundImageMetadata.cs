@@ -24,19 +24,19 @@ namespace PlaygroundReservations.Models
 			{
 			}
 	
-			[Display(Name = "PlaygroundImageId")]
+			[Display(Name = "Номер на снимка на игрище")]
 			//[Required()]
 			public System.Int32 PlaygroundImageId{ get; set; }
 
-			[Display(Name = "Path")]
+			[Display(Name = "Път")]
 			//[Required()]
 			public System.String Path{ get; set; }
 
-			[Display(Name = "PlaygroundId")]
+			[Display(Name = "Номер на игрище")]
 			//[Required()]
 			public System.Int32 PlaygroundId{ get; set; }
 
-			[Display(Name = "Playground")]
+			[Display(Name = "Игрище")]
 			//[Required()]
 			public PlaygroundReservations.Models.Playground Playground{ get; set; }
 

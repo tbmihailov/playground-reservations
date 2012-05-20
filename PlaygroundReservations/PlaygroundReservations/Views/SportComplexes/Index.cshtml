@@ -1,0 +1,95 @@
+@model IEnumerable<PlaygroundReservations.Models.SportComplex>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Ново", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Section
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Latitude
+        </th>
+        <th>
+            Longitude
+        </th>
+        <th>
+            Owner
+        </th>
+        <th>
+            Playgrounds
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("редактирай", "Edit", new { id=item.SportComplexId }) |
+            @Html.ActionLink("детайли", "Details", new { id=item.SportComplexId }) |
+            @Html.ActionLink("изтрий", "Delete", new { id=item.SportComplexId })
+        </td>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@item.Address
+        </td>
+        <td>
+			@item.City
+        </td>
+        <td>
+			@item.Section
+        </td>
+        <td>
+			@item.Description
+        </td>
+        <td>
+			@item.Phone
+        </td>
+        <td>
+			@item.Email
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Latitude)
+        </td>
+        <td>
+			@String.Format("{0:F}", item.Longitude)
+        </td>
+        <td>
+			@(item.Owner == null ? "None" : item.Owner.Name)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.Playgrounds).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

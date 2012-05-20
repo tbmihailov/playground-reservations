@@ -1,0 +1,25 @@
+@model PlaygroundReservations.Models.Reservation
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Reservation</legend>
+
+        @Html.HiddenFor(model => model.ReservationId)
+		@Html.Partial("_CreateOrEdit", Model)
+
+        <p>
+            <input type="submit" value="Запиши" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("към списък", "Index", null, new { @class = "back-button" })
+</div>
